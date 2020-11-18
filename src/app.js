@@ -83,9 +83,8 @@
                     // orb.mesh.position.y = meter.volume;
                     // orb.mesh.position.z = meter.volume; 
                 }
-            })            
-        }            
-
+            })
+        }
         renderer.render(scene, camera);        
     }
 

@@ -19,7 +19,7 @@ const initAudioContext = () => {
     track.connect(gainNode).connect(audioContext.destination);
 
     source = audioContext.createMediaStreamSource(micAudio);
-    source.connect(analyser);                 
+    source.connect(analyser);
 
     meter = createAudioMeter(audioContext);
     source.connect(meter);   

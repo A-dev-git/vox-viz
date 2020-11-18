@@ -3,7 +3,7 @@ const defaultShape = {
     geometry: new THREE.BoxGeometry(1,1,1),
     material: new THREE.MeshLambertMaterial({color: '#84cccf'}),
     pos: [0, 0, 0],
-    rotation: [0,0,0],       
+    rotation: [0,0,0],
 };
 
 const setupShape = (params) => {

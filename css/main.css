@@ -35,3 +35,16 @@ button{
     background-color: transparent !important;
     padding: .2em;
 }
+
+a{
+    position: absolute;
+    bottom: 2em;
+    left: 6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: .8em;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+    line-height: .8em;   
+    padding: .2em;
+}
