@@ -1,14 +1,23 @@
 // ***************** Audio ******************
 let audioContext, analyser, dataArray, source, rafId, meter;
 let audioData;
+let audioElement, track;
 
 const initAudioContext = () => {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     analyser = audioContext.createAnalyser();    
     analyser.fftSize = 256;        
     analyser.smoothingTimeConstant = 1;
-    dataArray = new Uint8Array(analyser.frequencyBinCount);              
+    dataArray = new Uint8Array(analyser.frequencyBinCount);  
     
+    audioElement = document.querySelector('audio');    
+
+    // pass it into the audio context
+    track = audioContext.createMediaElementSource(audioElement);    
+
+    gainNode = audioContext.createGain();
+    track.connect(gainNode).connect(audioContext.destination);
+
     source = audioContext.createMediaStreamSource(micAudio);
     source.connect(analyser);                 
 

@@ -37,6 +37,8 @@
 
     const defaultObjSize = 1;
     const objSelectedSize = 1.5;
+
+    const defaultGain = .1;
    
     let orbitRadius = 4;
     let orbitSpeed1 = 0;    
@@ -47,8 +49,10 @@
         sphereCamera.update(renderer,scene);
         requestAnimationFrame(render);                                              
 
-        if(audioData != undefined){
-            orbitSpeed1 += .005 + (meter.volume / 15);
+        if(audioData != undefined && playing){
+            gainNode.gain.value = defaultGain + (meter.volume * 5);
+
+            orbitSpeed1 += .005 + (meter.volume / 10);
             orbitSpeed2 += .004;
             orbitSpeed3 += .003;
             

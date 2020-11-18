@@ -20,3 +20,18 @@ h1 {
     border: 5px solid black;
     padding: .2em;
 }
+
+button{
+    position: absolute;
+    top: 10em;
+    left: 6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+    line-height: .8em;
+    border: 5px solid black;
+    background-color: transparent !important;
+    padding: .2em;
+}

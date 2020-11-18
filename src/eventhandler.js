@@ -1,9 +1,10 @@
 // ***************** Event Handling **************
 const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();        
+const mouse = new THREE.Vector2(); 
+let playing = false;       
 
 const onMouseClick = (event) => {            
-    event.preventDefault();    
+    event.preventDefault();       
 
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -31,6 +32,31 @@ const onMouseClick = (event) => {
         }                   
     }
 }
+
+const playButton = document.querySelector('button');
+
+playButton.addEventListener('click', function() {  
+
+    if(playing){
+        playing = false;
+    }else{
+        playing = true;
+    }
+    
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
+
+    // play or pause track depending on state
+    if (this.dataset.playing === 'false') {
+        audioElement.play();
+        this.dataset.playing = 'true';
+    } else if (this.dataset.playing === 'true') {
+        audioElement.pause();
+        this.dataset.playing = 'false';
+    }
+
+}, false);
 
 window.addEventListener('click', onMouseClick, false);
 // ***************** Event Hadnling End **************
